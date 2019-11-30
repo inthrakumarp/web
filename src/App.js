@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
 import api from './Api'
-import './App.css' 
-    class App extends Component {
+import './App.css'
+
+class App extends Component {
       state = {
         user: null,
         email: '',
         password: '',
       }
-    
+
       loginUser = async (e) => {
         e.preventDefault()
         const { email, password } = this.state
@@ -15,7 +16,9 @@ import './App.css'
         const { data: user } = await api.getUser(token)
         this.setState({ user })
       }
-      inputChange = e => this.setState({ [e.target.id]: e.target.value })
+
+      inputChange = (e) => this.setState({ [e.target.id]: e.target.value })
+
       renderLoginForm = () => {
         const { email, password } = this.state
         return (
@@ -36,10 +39,10 @@ import './App.css'
           </form>
         )
       }
-    
+
       render () {
         const { user } = this.state
-    
+
         return (
           <div className="App">
             {user ? (
@@ -51,7 +54,6 @@ import './App.css'
           </div>
         )
       }
-    }
-    
-    export default App
-    
+}
+
+export default App
