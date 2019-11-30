@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import ReactTable from 'react-table'
+import 'react-table/react-table.css'
 import api from './Api'
 import './App.css'
 
@@ -43,12 +45,56 @@ class App extends Component {
       render () {
         const { user } = this.state
 
+        const data = [{
+          subject: 'English A Lit',
+          lvl: 'HL',
+          mark: 45,
+        }, {
+          subject: 'Spanish B',
+          lvl: 'SL',
+          mark: 55,
+        }, {
+          subject: 'Biology',
+          lvl: 'HL',
+          mark: 65,
+        }, {
+          subject: 'Physics',
+          lvl: 'SL',
+          mark: 62,
+        }, {
+          subject: 'History',
+          lvl: 'HL',
+          mark: 60,
+        }, {
+          subject: 'Mathematics',
+          lvl: 'SL',
+          mark: 80,
+        }]
+
+        const columns = [{
+          Header: 'Subject',
+          accessor: 'subject', // String-based value accessors!
+        }, {
+          Header: 'Lvl',
+          accessor: 'lvl',
+        }, {
+          Header: 'Mark',
+          accessor: 'mark',
+        }]
         return (
           <div className="App">
             {user ? (
               <>
                 <div>{`Welcome ${user.email}!`}</div>
                 <div>{`Your name is ${user.firstname} ${user.lastname}`}</div>
+                <br />
+                <ReactTable
+                  data={data}
+                  columns={columns}
+                  defaultPageSize={6}
+                  showPagination={false}
+                />
+                <div>Result code: D</div>
               </>
             ) : this.renderLoginForm()}
           </div>
