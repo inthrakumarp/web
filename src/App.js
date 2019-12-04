@@ -26,7 +26,7 @@ class App extends Component {
         return (
           <form onSubmit={this.loginUser}>
             <h1>IB Candidate site</h1>
-            <h2>Updated by the CI/CD on 03-DEC-19 19:23</h2>
+            <h2>Updated by the CI/CD on 03-DEC-19 20:20</h2>
             <label htmlFor="email">
               <span>Email:</span>
               <input onChange={this.inputChange} value={email} id="email" name="email" type="email" />

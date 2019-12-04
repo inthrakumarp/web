@@ -7,7 +7,7 @@ exports[`<App /> Snapshots should render the login form if no user is present 1`
       IB Candidate site
     </h1>
     <h2>
-      Updated by the CI/CD on 03-DEC-19 19:23
+      Updated by the CI/CD on 03-DEC-19 20:20
     </h2>
     <label htmlFor=\\"email\\">
       <span>
